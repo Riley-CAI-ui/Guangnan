@@ -46,7 +46,7 @@ let Language=localStorage.getItem("language") || "zh"
                 en:"I’m Riley, a Grade 9 student at Shenzhen College of International Education. I’m passionate about computer science and biology—and this project gave me a way to connect those interests with something real. Guangnan’s culture, especially the stories of the farmers, touched me deeply.One moment I can’t forget: in the village square, a group of children were playing without any adults around. Their parents had gone to work in faraway cities. That quiet image stayed with me—it made me think about what kind of support a village really needs.I decided to build this website not just as a technical challenge, but as a way to help more people see what makes this place special. From structuring multilingual content to designing farmer profiles, every line of code was a way of understanding Guangnan better. Technology felt less like a tool, and more like a bridge.",
                 zh:"我是 Riley，就读于深圳国际交流书院九年级。我对计算机和生物充满兴趣，而这个项目让我第一次把这些兴趣用在真实的事情上。广南的文化，尤其是农民的故事让我很有触动。有一个场景让我印象特别深：傍晚的广场上，一群孩子在玩耍，周围却没有一个大人。他们的父母都外出打工了。那个画面很安静，却让我久久不能忘——也让我开始思考，乡村真正需要的支持到底是什么。我决定搭建这个网站，不只是出于技术挑战的兴趣，更是想通过它让更多人看到广南的特别。从多语言内容结构，到农民资料的排版设计，每一行代码都是我理解广南的方式。那一刻，技术不再只是工具，而是变成了连接彼此的桥梁。",
             },
-            image:"../member_images/Riley_image.jpg"
+            image:"/member_images/Riley_image.jpg"
         
         }
 
@@ -103,7 +103,7 @@ let Language=localStorage.getItem("language") || "zh"
                         text:"The annual yield of Guangnan’s sticky rice is heavily influenced by weather, climate, and labor availability. Most current farmers are elderly, and the workforce is insufficient to ensure consistent farming cycles. Natural disasters often disrupt planting and harvesting, making large-scale buyers hesitant to invest due to uncertain supply."
                     },
 
-                    background:"../Image_about/ageing.jpg"
+                    background:"/Image_about/ageing.jpg"
                 },
 
                 back:{
@@ -133,7 +133,7 @@ let Language=localStorage.getItem("language") || "zh"
                         text:"Although Guangnan sticky rice is of exceptional quality, it suffers from weak brand promotion. Sales are still dominated by traditional markets and word-of-mouth, lacking structured marketing strategies. Modern consumers increasingly value product stories and traceability, but Guangnan has yet to establish a clear and recognizable brand image on a broader scale."
                     },
 
-                    background:"../Image_about/mature_sticky_rice.jpg"
+                    background:"/Image_about/mature_sticky_rice.jpg"
                 },
 
                 back:{
@@ -163,7 +163,7 @@ let Language=localStorage.getItem("language") || "zh"
                         text:"Guangnan Village adheres to ecological and traditional farming methods, which ensure the high quality of sticky rice but also lead to increased labor and time costs. Without mechanized support, local farmers must devote great effort to planting, irrigation, and harvesting. As a result, the production cost is high, driving up prices and weakening competitiveness against cheaper, industrialized alternatives nearby."
                     },
 
-                    background:"../Image_about/lowincome.jpg"
+                    background:"/Image_about/lowincome.jpg"
                 },
 
                 back:{
@@ -186,18 +186,18 @@ let Language=localStorage.getItem("language") || "zh"
             container.innerHTML=""
 
             const html=`
-                <li><img src="../Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
-                <li><a href="../index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
-                <li><a href="../Adoption/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
-                <li><a href="../Details/Details.html">${lang==="zh" ? "认养细节" : "Adoption Details"}</a></li>
-                <li><a href="../Journal/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
+                <li><img src="/Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
+                <li><a href="/index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
+                <li><a href="/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
+                <li><a href="/Details.html">${lang==="zh" ? "认养细节" : "Adoption Details"}</a></li>
+                <li><a href="/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
                 
                 <li class="dropdown">
                     <a href="#">${lang==="zh" ? "其他细节" : "Other Details"}</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../Farmer/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
-                        <li><a href="../QaA/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
-                        <li><a href="../Dongyi introduction/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
+                        <li><a href="/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
+                        <li><a href="/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
+                        <li><a href="/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
                     </ul>
                 </li>
                 
@@ -250,21 +250,21 @@ let Language=localStorage.getItem("language") || "zh"
             html=`
                 
                     <div class="item">
-                        <img src="../Image_about/Guangnan_image5.jpg" alt="Picture of village">
+                        <img src="/Image_about/Guangnan_image5.jpg" alt="Picture of village">
                         <div class="info_text">
                             <h1>${introText[0].title[lang]}</h1>
                             <p>${introText[0].text[lang]}</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="../Image_about/Guangnan_image3.jpg" alt="Picture of Village">
+                        <img src="/Image_about/Guangnan_image3.jpg" alt="Picture of Village">
                         <div class="info_text">
                             <h1>${introText[1].title[lang]}</h1>
                             <p>${introText[1].text[lang]}</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="../Image_about/Guangnan_image2.jpg" alt="Picture of village">
+                        <img src="/Image_about/Guangnan_image2.jpg" alt="Picture of village">
                         <div class="info_text">
                             <h1>${introText[2].title[lang]}</h1>
                             <p>${introText[2].text[lang]}</p>
@@ -339,7 +339,7 @@ let Language=localStorage.getItem("language") || "zh"
                 </div>
             </div>
 
-            <a href="../Dongyi introduction/Dongyi.html">Want to learn more about traditional Dong Medicine</a>`
+            <a href="/Dongyi.html">Want to learn more about traditional Dong Medicine</a>`
 
             container.innerHTML+=html
 

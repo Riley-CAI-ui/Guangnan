@@ -222,18 +222,18 @@
             container.innerHTML=""
 
             const html=`
-                <li><img src="../Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
-                <li><a href="../index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
-                <li><a href="../Adoption/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
-                <li><a href="../About page/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
-                <li><a href="../Journal/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
+                <li><img src="/Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
+                <li><a href="/index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
+                <li><a href="/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
+                <li><a href="/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
+                <li><a href="/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
                 
                 <li class="dropdown">
                     <a href="#">${lang==="zh" ? "其他细节" : "Other Details"}</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../Farmer/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
-                        <li><a href="../QaA/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
-                        <li><a href="../Dongyi introduction/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
+                        <li><a href="/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
+                        <li><a href="/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
+                        <li><a href="/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
                     </ul>
                 </li>
                 

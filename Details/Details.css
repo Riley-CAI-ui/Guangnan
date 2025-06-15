@@ -8,7 +8,7 @@
 
 
         #banner{
-            background: url(../Image_about/Sticky_rice_field1.jpg);
+            background: url("/Image_about/Sticky_rice_field1.jpg");
             width: 100%;
             height: 300px;
             background-position: center;
@@ -496,7 +496,7 @@
         }
 
         #want_adopt{
-          background-image: url("../Image_about/tiandi.jpg");
+          background-image: url("/Image_about/tiandi.jpg");
           width: 100%;
           height: 800px;
           display: flex;
