@@ -114,7 +114,7 @@ function navigationLang(lang){
 
             const html=`
                 <li><img src="../Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
-                <li><a href="../Index/index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
+                <li><a href="../index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
                 <li><a href="../About page/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
                 <li><a href="../Details/Details.html">${lang==="zh" ? "认养细节" : "Adoption Details"}</a></li>
                 <li><a href="../Journal/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>

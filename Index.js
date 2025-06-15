@@ -9,8 +9,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "了解认养的流程、价格、时间线与参与方式，清晰透明，不留疑问。",
                         en: "Explore the adoption process, pricing, timeline, and how to participate — clear and transparent."
                     },
-                    image: "../Image_about/mature_sticky_rice.jpg",
-                    link:"../Details/Details.html"
+                    image: "Image_about/mature_sticky_rice.jpg",
+                    link:"Details/Details.html"
                 },
                 {
                     title: {
@@ -21,8 +21,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "选择一块糯米田，亲手种下希望，收获属于你的文化与稻香。",
                         en: "Choose a rice field, sow hope with your own hands, and harvest both grain and meaning."
                     },
-                    image: "../Image_about/form.png",
-                    link:"../Adoption/Adoption.html"
+                    image: "Image_about/form.png",
+                    link:"Adoption/Adoption.html"
                 },
                 {
                     title: {
@@ -33,8 +33,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "理解广南糯米认养计划的意义，以及广南村",
                         en: "Learn the meaning of Sticky Rice Adoption Plan and the Village of Guangnan"
                     },
-                    image: "../Image_about/Guangnan_image3.jpg",
-                    link:"../About page/About.html"
+                    image: "Image_about/Guangnan_image3.jpg",
+                    link:"About page/About.html"
                 },
                 {
                     title: {
@@ -45,8 +45,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "了解侗医所建设如何改善医疗资源，保护侗族传统医学。",
                         en: "Discover how the Dong Medicine Clinic improves healthcare and preserves traditional medicine."
                     },
-                    image: "../Image_about/clinic_picture.png",
-                    link:"../Dongyi introduction/Dongyi.html"
+                    image: "Image_about/clinic_picture.png",
+                    link:"Dongyi introduction/Dongyi.html"
                 },
                 {
                     title: {
@@ -57,8 +57,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "看看正在耕种你所认养稻田的农民是谁，听听他们的故事与笑容。",
                         en: "Meet the farmers cultivating your adopted field, and hear the stories behind their smiles."
                     },
-                    image: "../farmer_image/石志向.jpg",
-                    link:"../Farmer/Farmer.html"
+                    image: "farmer_image/石志向.jpg",
+                    link:"Farmer/Farmer.html"
                 },
                 {
                     title: {
@@ -69,8 +69,8 @@ let Language=localStorage.getItem("language") || "zh"
                         zh: "我们整理了认养过程中最常被问到的问题与答复，供你参考。",
                         en: "Find answers to frequently asked questions about the adoption experience and project details."
                     },
-                    image: "../Image_about/People_with_sticky_rice_walking.jpg",
-                    link:"../QaA/QaA.html"
+                    image: "Image_about/People_with_sticky_rice_walking.jpg",
+                    link:"QaA/QaA.html"
                 }
             ]
 
@@ -90,18 +90,18 @@ let Language=localStorage.getItem("language") || "zh"
             container.innerHTML=""
 
             const html=`
-                <li><img src="../Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
-                <li><a href="../About page/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
-                <li><a href="../Adoption/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
-                <li><a href="../Details/Details.html">${lang==="zh" ? "认养细节" : "Adoption Details"}</a></li>
-                <li><a href="../Journal/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
+                <li><img src="Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
+                <li><a href="About page/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
+                <li><a href="Adoption/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
+                <li><a href="Details/Details.html">${lang==="zh" ? "认养细节" : "Adoption Details"}</a></li>
+                <li><a href="Journal/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
                 
                 <li class="dropdown">
                     <a href="#">${lang==="zh" ? "其他细节" : "Other Details"}</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../Farmer/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
-                        <li><a href="../QaA/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
-                        <li><a href="../Dongyi introduction/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
+                        <li><a href="Farmer/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
+                        <li><a href="QaA/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
+                        <li><a href="Dongyi introduction/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
                     </ul>
                 </li>
                 
@@ -133,7 +133,7 @@ let Language=localStorage.getItem("language") || "zh"
             content.classList.add("show")
         }
         function audio(){
-            let audio=new Audio("../nature.mp3")
+            let audio=new Audio("nature.mp3")
             audio.loop=true
 
             let audioPlaying=false
