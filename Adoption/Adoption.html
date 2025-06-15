@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>认养表单</title>
+
+    <link rel="icon" href="../Image_about/Logo.jpg" type="image/jpg">
+    <link rel="stylesheet" href="Adoption.css">
+    <link rel="stylesheet" href="../header.css">
+</head>
+<body>
+    <header>
+            <nav>
+                <button id="hamburger">&#9776;</button>
+                
+                <ul id="navigation">
+                    
+                </ul>
+            </nav>
+    </header>
+
+    <form id="adopt_form">
+
+            <label for="user_name" data-text-id="user_name"></label><br>
+            <input type="text" name="user_name" required /><br><br>
+
+            <label for="user_email" data-text-id="user_email"></label><br>
+            <input type="email" name="user_email" required /><br><br>
+
+            <label for="user_phone" data-text-id="user_phone"></label><br>
+            <input type="text" name="user_phone" /><br><br>
+
+            <label for="user_area" data-text-id="user_area"></label><br>
+            <input type="text" name="user_area" required /><br><br>
+
+            <label for="user_note" data-text-id="user_note"></label><br>
+            <input type="text" name="user_note" /><br><br>
+
+            <button type="submit" id="submit_button" data-text-id="button"></button>
+
+    </form>
+
+    <div id="notification"></div><!--for status display-->
+
+    <footer>
+        © 2025 广南村保护中心
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!--引入emaijs的库-->
+    <script src="Adoption.js"></script>
+
+    
+</body>
+</html>

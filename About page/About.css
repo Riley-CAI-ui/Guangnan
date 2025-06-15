@@ -1,0 +1,853 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fffaf2;
+      color: #333;
+      padding-top: 100px; /* 防止导航栏遮住内容 */
+    }
+
+    
+    
+    
+    
+    
+    /*navigation bar*/
+    header {
+      background-color: #fff7e6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      
+      position: fixed;  /*ensure it is right on the top*/
+      top: 0;
+      left: 0;
+      
+      z-index: 1000; /*ensure that it is over other elements*/
+      
+      width: 100%;
+      height: 100px;
+    }
+
+    #hamburger{
+        display:none
+    }
+
+    nav {
+      max-width: 1200px;
+      
+      margin: 0 auto;
+      padding: 12px 20px;
+    }
+
+    #navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      list-style: none; /*cut the style of list*/
+    }
+
+    #navigation li {
+      margin: 0 10px;
+    }
+
+    #Logo {
+      width: 70px;
+      height: 70px;
+      
+      border-radius: 50%;
+      
+      object-fit: cover;
+    }
+
+    #navigation a {
+      text-decoration: none;
+      color: #5a4632;
+      font-size: 17px;
+      border-radius: 6px;
+      
+      padding: 8px 14px;
+      
+      transition: all 0.3s ease;
+    }
+
+    #navigation a:hover {
+      background-color: #a52a2a;
+      color: #fff;
+    }
+
+    
+    
+    
+    /*下拉菜单区*/
+    
+    
+    .dropdown{
+        position: relative;
+    }
+
+    .dropdown-menu{
+        display: none;
+        
+        position: absolute; /*脱离文档流*/
+        top: 100%;
+        left: 0;
+        
+        min-height: 160px;
+        
+        list-style: none;
+        
+        z-index: 1000;
+
+        transform:translateX(-7px);
+    }
+
+ 
+    .dropdown-menu li{
+        width: 100%;
+        
+        margin-top:16px;
+        margin-bottom: 16px;
+        
+    }
+    
+    .dropdown-menu li a{
+        color: black !important;
+        text-decoration: none;
+        font-size: 14px !important;
+        
+        display: block;
+        text-align: center;
+        
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+
+    .dropdown-menu:hover .dropdown-menu{
+        display: block;
+    }
+
+
+    #hamburger{
+        display: none; /*汉堡按钮在pc端不显示*/
+    }
+
+    /*self-change for different devices*/
+
+    
+    @media(max-width:768px){  /*basic for the self-accomodation for the page*/
+        #hamburger{
+            display: block; /*小屏幕时显示*/
+
+            border-radius: 12px;
+            background-color: #ffeccc;
+            
+            width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        #navigation{
+            display: none; /*初始不可见*/
+
+            background-color: #fff7e6;
+            
+            flex-direction: column; /*元素左对齐+纵向排列*/
+            align-items:flex-start;
+            
+            padding: 10px;
+            gap:8px;
+        }
+
+        #navigation.active{
+            display: flex;  /*添加active类名后可见*/
+        }
+
+        #navigation li{
+            width: 100%;  /*one elelment occupy one whole line */
+            margin: 6px 0;
+        }
+
+        .dropdown-menu{
+            position: static;
+
+            transform: none;
+            
+            background-color: #fff7e6;
+            
+            width: 100%;
+            padding:0;
+        }
+
+        #Logo{
+            margin: 0 auto;  /*logo 居中显示*/
+        }
+
+        header{
+            height: auto;
+        }
+
+        #languageSelect{
+            width: 100%;
+            padding: 10px 16px;
+            
+            font-size: 15px;
+        }
+
+        .dropdown-menu li a{
+            text-align: left;
+            padding-left:20px;
+
+            font-size: 15px;
+
+            width: 100%;
+            display: block;
+        }
+    }
+    
+
+    
+    
+    
+    /*introduction*/
+
+    #banner_area{
+        
+        height:600px;
+        background:url(../Image_about/Guangnan_image1.jpg);
+
+        background-size:cover;
+        background-position: center;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        position:relative;
+
+        
+    }
+
+    #banner_area::before{
+        content:"";
+        inset: 0;
+        position: absolute;
+        background:rgba(0,0,0,0.4);
+        z-index:1;
+    }
+
+    #banner_text{
+        position:relative;
+        z-index:2;
+        color:burlywood;
+        text-align:center;
+    }
+
+
+    /*Introduction*/
+
+    #brief_introdution {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 40px 20px;
+    }
+
+    .item{
+        display:flex;
+        align-items: center;
+        gap:40px;
+        padding: 30px;
+        border-radius: 16px;
+        background-color: #fffef9;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+    }
+
+    .itme:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2)
+    }
+
+    .item:nth-child(even){
+        flex-direction:row-reverse;
+    }
+
+    .item img{
+        
+        max-width:480px;
+        object-fit: cover;
+        border-radius:12px;
+        height: 300px;
+        box-shadow:0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .item img:hover{
+        transform: scale(1.03);
+    }
+
+    .info_text h1{
+        font-size: 24px;
+        color: #5a4632;
+        margin-bottom: 16px;
+    }
+ 
+    .info_text p{
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+        text-align: justify;
+    }
+
+    /*移动端*/
+
+    @media (max-width: 768px) {
+        .item {
+            flex-direction: column !important;
+            text-align: center;
+        }
+
+        .item img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info_text p {
+            text-align: left;
+        }
+    }
+
+
+    /* problems*/
+
+    .problem-left, .problem-right{
+        border-radius: 12px;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+        
+        width: 100%;
+        height: 400px;
+       
+        perspective: 1200px;  /*provides opportunity for rotation*/
+        position: relative;
+        
+        opacity:0;
+        transition:all 0.9s ease-in-out;
+        transform: translateY(10px);
+
+    }
+
+    .problem-left.show, .problem-right.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    
+    
+    .flip-inner{
+        position: relative;
+        
+        width: 100%;
+        height: 100%;
+        
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+        
+        cursor: pointer;
+
+        
+    }
+
+    .front-problem, .back-solution{
+       position: absolute;
+       top: 0;
+       left: 0;
+        
+        max-width: 600px;
+        width: 100%;
+        height: 100%;
+
+        backface-visibility: hidden;
+        
+        padding: 20px;
+        
+        border-radius: 12px;
+    }
+
+    .back-solution{
+        transform: rotateY(180deg);
+        background-color: brown;
+    }
+
+    .flip-inner.flipped{
+        transform: rotateY(180deg);
+    }
+
+   
+
+
+    
+    
+    
+    .problem-left{
+        margin-right: auto;  /*closer to the left side*/
+        
+        max-width: 500px;
+       
+    }
+
+    .problem-right{
+        margin-left:auto;
+    
+        max-width: 500px;
+        
+    }
+
+
+    #Problem_facing{
+        background-color: wheat;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        margin: 30px;
+        padding: 20px;
+        
+        height: auto;
+    }
+
+    #main-container{
+        width: 100%;
+        height: 100%;
+        
+        padding: 30px;
+    }
+
+    .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-size: 20px;
+            
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            pointer-events: none;
+            
+            padding: 20px;
+        }
+
+        .problem-left:hover .overlay{
+            opacity: 1;
+        }
+
+        .problem-right:hover .overlay{
+            opacity: 1;
+        }
+
+        .front-problem p{
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .front-problem h2{
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .back-solution p{
+            font-size: 24px;
+            color: wheat;
+            font-weight: bold;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .back-solution h2{
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: wheat;
+            font-weight: bold;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+
+        /*phone layout for the problem facing section*/
+
+        @media(max-width:768px){
+            .problem-left, .problem-right{
+                margin: 20px auto; /*make the card to lay vertically on a line*/
+
+                width: 100%;/*height is not dictated now*/
+                height: 450px;
+
+                text-align: center;
+            }
+
+            .front-problem, .back-solution{
+                max-width: 100%;
+                height: 100%;
+
+                padding: 16px;
+            }
+
+            .problem-left h2, .problem-right h2{
+                font-size: 24px;
+            }
+
+            .problem-left p, .problem-right p{
+                font-size: 16px;
+            }
+
+            .overlay {
+                font-size: 16px;
+                
+                padding: 12px;
+            }
+
+            /*手机端添加点击overlay效果*/
+
+            .problem-left:hover .overlay,
+            .problem-right:hover .overlay{
+                opacity: 0;
+            }
+
+            .overlay.activer{
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        }
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+    #meaning{
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        gap: 30px;
+        align-items: stretch;
+        
+        margin: 40px;
+        padding: 30px;
+        height: auto;
+        
+        background-color: bisque;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #meaning_text{
+        flex:3;
+        position: relative;
+    }
+
+    #meaning_intro, #impact, #members, #toggleMembers{
+        background-color: burlywood;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        border-radius: 12px;
+
+        line-height: 1.7;
+
+        padding: 20px;
+        margin: 20px;
+    }
+
+    #meaning_intro h1, #impact h1 {
+        margin-bottom: 15px;
+    }
+
+    #toggleMembers{
+        width: 90%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background-color: brown;
+        color: wheat;
+
+        transition: all 0.5s ease-in-out;
+    }
+
+    #toggleMembers:hover{
+        transform: scale(1.05);
+        
+        background-color: wheat;
+        color: brown;
+    }
+
+    #members{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background-color: beige;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 12px;
+        
+        opacity: 0;
+        transform:translateY(10px);
+        pointer-events: none;
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
+        
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+
+    #members.show{
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .member{
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        background-color: #EB8F04;
+
+        padding: 20px;
+
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .member figure figcaption{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .member figure{
+        flex: 2;
+    }
+
+    .member figure img{
+        border-radius: 16px;
+        border: 6px solid greenyellow;
+        object-fit:cover;
+        width: 100%;
+        
+    }
+
+    .member div{
+        flex:3;
+    }
+
+
+
+    #meaning a{
+        display: flex;
+        align-items: center;
+        text-align:center;
+        flex:2;  /*40% of the container*/
+
+        margin: 10px;
+
+        background-image:url("../Image_about/herb.png");
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size:cover;
+
+        text-shadow:0 1px 2px rgba(0, 0, 0, 0.6);
+        color:white;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight:bold;
+        font-size:18px;
+
+        transition:all 0.5s ease-in-out;
+    }
+
+    #meaning a:hover{
+        transform:scale(1.05,1.05);
+        color:green;
+    }
+
+
+    /*手机端自适应布局，meaning section*/
+
+    @media(max-width:768px) {
+        #meaning{
+            flex-direction: column;
+        }
+
+        .member{
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+        .member figure img{
+            max-width: 250px;
+        }
+
+        #meaning a{
+            color: black;
+            padding: 30px;
+        }
+
+        #meaning a:active{
+            transform: scale(1.05);
+            color: green;
+        }
+
+        #meaning_text h1{
+            line-height: 1.4;
+        }
+
+    }
+
+
+    
+   
+
+    
+
+    
+
+        
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .floating-arrow{
+          height: 0;
+          width: 0;
+          border-left: 16px solid transparent;
+          border-right: 16px solid transparent;
+
+          border-top: 20px solid orange;
+          margin: 20px auto 0;
+
+          animation: floatArrow 1.5s infinite ease-in-out;
+        }
+
+        @keyframes floatArrow {
+          0%, 100%{transform: translateY(0); opacity: 1}
+          50% {transform: translateY(10px); opacity: 0.5;}
+        }
+
+        .intro-callout {
+          background: linear-gradient(to bottom, #fff7e6, #ffeccc);
+          padding: 24px 32px;
+          border-radius: 16px;
+          text-align: center;
+          font-size: 20px;
+          color: #333;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+          max-width: 600px;
+          margin: 20px auto;
+        }
+
+        #adopt-section{
+          display: flex;
+          justify-content: center;
+        }
+
+        .adopt-button {
+          display: inline-block;
+          margin: 10px auto;
+          padding: 16px 32px;
+          background-color: #ffa500;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          border-radius: 12px;
+          text-decoration: none;
+          box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+          transition: all 0.3s ease;
+        }
+
+        .adopt-button:hover {
+          background-color: #ff8800;
+          transform: translateY(-5px);
+        
+        }
+
+        #want_adopt{
+          background-image: url("../Image_about/tiandi.jpg");
+          width: 100%;
+          height: 800px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: cover;
+          background-position: center;
+          border-top: #ff8800 solid 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+            margin-bottom:30px;
+        }
