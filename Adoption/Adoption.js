@@ -47,6 +47,10 @@ form.addEventListener("submit", function(event){
             
             
             setButtonLoading(false)
+
+            setTimeout(() => {
+                window.location.href ="/Contact_info.html";
+            }, 5000); // 2000 毫秒 = 2 秒
             
         })
         .catch(function(error){
