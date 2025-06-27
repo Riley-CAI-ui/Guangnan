@@ -21,7 +21,7 @@ function showNotification(type){
 
     setTimeout(() => {
         box.style.display="none"
-    }, 10000);
+    }, 3000);
 }
 
 function setButtonLoading(isLoading){

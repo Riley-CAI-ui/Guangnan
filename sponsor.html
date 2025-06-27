@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>支持我们 Sponsor</title>
+  <link rel="icon" href="/Image_about/Logo.jpg" type="image/jpg" />
+  <style>
+    :root{
+      --c-bg:#fffef8;--c-soft:#faf7ea;--c-text:#0f172a;--c-sub:#475569;
+      --c-accent:#2e7d32;--c-accent-2:#b5e642;--c-border:#e2e8f0;
+      --sh-md:0 6px 16px rgba(2,8,23,.12);--sh-lg:0 18px 48px rgba(2,8,23,.18);
+      --r-lg:16px;--r-xl:20px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--c-bg);color:var(--c-text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{text-decoration:none;color:inherit}
+
+    /* ====== 保留原版导航结构的基础样式（不改变结构与行为）====== */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--c-border)}
+    nav{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
+    #hamburger{all:unset;cursor:pointer;font-size:22px;line-height:1;padding:6px 10px;border-radius:8px;border:1px solid var(--c-border);display:none}
+    #navigation{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:14px;flex:1;flex-wrap:wrap}
+    #navigation li img#Logo{height:34px;width:auto;border-radius:6px;display:block}
+    #navigation li a{padding:8px 10px;border-radius:10px}
+    #navigation li a:hover{background:rgba(2,8,23,.04)}
+    .dropdown{position:relative}
+    .dropdown-menu{position:absolute;top:110%;left:0;background:#fff;border:1px solid var(--c-border);border-radius:12px;box-shadow:var(--sh-md);padding:8px 6px;display:none;min-width:160px}
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu li a{display:block;padding:8px 10px;border-radius:8px}
+    .dropdown-menu li a:hover{background:rgba(2,8,23,.04)}
+    #languageSelect{padding:6px 8px;border-radius:10px;border:1px solid var(--c-border);background:#fff}
+
+    @media (max-width:860px){
+      #hamburger{display:block}
+      #navigation{display:none;flex-direction:column;align-items:stretch;padding:10px;border:1px solid var(--c-border);border-radius:12px;margin-top:6px}
+      #navigation.active{display:flex}
+      .dropdown:hover .dropdown-menu{display:none}
+      .dropdown-menu{position:relative;top:auto;left:auto;border:none;box-shadow:none;padding:0;margin-top:6px}
+    }
+
+    /* ====== 页面主体：赞助二维码 ====== */
+    .container{width:min(1120px,92vw);margin-inline:auto}
+    .section{padding:26px 0}
+    .title{font-size:clamp(22px,2.6vw,28px);margin:14px 0 8px;position:relative}
+    .title::after{content:"";display:block;width:58px;height:4px;background:linear-gradient(90deg,var(--c-accent-2),rgba(181,230,66,.2));border-radius:2px;margin-top:6px}
+    .sub{margin:0;color:var(--c-sub)}
+
+    .grid{margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:#fff;border:1px solid var(--c-border);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;display:flex;flex-direction:column}
+    .card__head{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;background:var(--c-soft)}
+    .card__title{font-weight:700}
+    .badge{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid rgba(181,230,66,.5);background:rgba(181,230,66,.18)}
+    .card__media{padding:18px;display:grid;place-items:center}
+    .card__media img{width:min(360px,80vw);max-width:100%;height:auto;border-radius:16px;box-shadow:var(--sh-lg);background:#fff}
+    .card__actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 18px 18px}
+    .btn{display:inline-block;padding:.62rem 1rem;border-radius:999px;border:1px solid var(--c-border);background:#fff;color:var(--c-text)}
+    .btn--primary{background:var(--c-accent);color:#fff;border-color:transparent}
+    .btn:active{transform:translateY(1px)}
+    @media (min-width:860px){ .card{grid-column:span 6} }
+
+    .note{margin:22px auto 0;max-width:720px;background:linear-gradient(to bottom,#fff7e6,#ffeccc);border:1px solid #f8e4bf;padding:16px 18px;border-radius:16px;box-shadow:var(--sh-md);color:#5b4506}
+    .note small{color:#8b6d1a}
+
+    footer{margin:28px 0 32px;text-align:center;color:#94a3b8;font-size:14px}
+
+    /* ====== 放大弹窗 ====== */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+    .modal.open{display:flex}
+    .modal__img{max-width:92vw;max-height:88vh;border-radius:16px;box-shadow:var(--sh-lg);background:#fff}
+    .modal__close{position:absolute;top:16px;right:16px;background:#fff;border:1px solid var(--c-border);border-radius:999px;padding:6px 10px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <!-- ====== 原版导航（结构不改动）====== -->
+  <header>
+    <nav>
+      <button id="hamburger">&#9776;</button><!--button for displaying the navigation menu when using phone-->
+      <ul id="navigation"></ul>
+    </nav>
+  </header>
+
+  <!-- ====== 主体：两个付款码 ====== -->
+  <main class="container section">
+    <h1 class="title" data-text-id="page_title">支持我们</h1>
+    <p class="sub" data-text-id="page_sub">选择支付宝或微信进行赞助。点击二维码可放大，或保存到相册后在 App 内识别。</p>
+
+    <div class="grid">
+      <!-- 支付宝 -->
+      <article class="card" data-pay="alipay">
+        <div class="card__head">
+          <div class="card__title" data-text-id="alipay_title">支付宝 Alipay</div>
+          <span class="badge" data-text-id="badge_direct">直达收款</span>
+        </div>
+        <div class="card__media">
+          <img id="qr-alipay" src="/Image_about/pay_alipay.webp" alt="Alipay QR" />
+        </div>
+        <div class="card__actions">
+          <button class="btn btn--primary" data-zoom="alipay" data-text-id="btn_zoom">点击放大</button>
+          <button class="btn" data-save="alipay" data-text-id="btn_save">保存二维码</button>
+        </div>
+      </article>
+
+      <!-- 微信 -->
+      <article class="card" data-pay="wechat">
+        <div class="card__head">
+          <div class="card__title" data-text-id="wechat_title">微信 WeChat</div>
+          <span class="badge" data-text-id="badge_direct">直达收款</span>
+        </div>
+        <div class="card__media">
+          <img id="qr-wechat" src="/Image_about/pay_wechat.webp" alt="WeChat QR" />
+        </div>
+        <div class="card__actions">
+          <button class="btn btn--primary" data-zoom="wechat" data-text-id="btn_zoom">点击放大</button>
+          <button class="btn" data-save="wechat" data-text-id="btn_save">保存二维码</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">
+      <div data-text-id="tip_text">提示：若在微信或支付宝内打开本页，长按二维码可直接识别。若无法识别，请保存图片后在 App 内扫码。</div>
+      <small data-text-id="assist_text">需要开具凭证或遇到问题？请前往 <a href="/form.html">form.html</a> 留下信息，我们将人工协助。</small>
+    </div>
+  </main>
+
+  <footer>© 2025 广南村保护中心</footer>
+
+  <!-- ====== 放大弹窗 ====== -->
+  <div class="modal" id="qr-modal" aria-hidden="true">
+    <button class="modal__close" id="modal-close">✕</button>
+    <img class="modal__img" id="modal-img" src="" alt="QR Zoom" />
+  </div>
+
+  <script>
+    /* ========= 与原站一致的语言与导航逻辑（不改结构） ========= */
+    let Language = localStorage.getItem("language") || "zh";
+
+    // —— 原版导航（保持你之前的链接 & 结构）——
+    function navigationLang(lang){
+      const container=document.getElementById("navigation");
+      container.innerHTML="";
+      const html=`
+        <li><img src="/Image_about/Logo.jpg" alt="Logo" id="Logo"></li>
+        <li><a href="/index.html">${lang==="zh" ? "主页" : "Home"}</a></li>
+        <li><a href="/Adoption.html">${lang==="zh" ? "想要认养" : "Want to Adopt"}</a></li>
+        <li><a href="/About.html">${lang==="zh" ? "关于" : "About"}</a></li>
+        <li><a href="/Journal.html">${lang==="zh" ? "项目日志" : "Project Journal"}</a></li>
+        <li class="dropdown">
+          <a href="#">${lang==="zh" ? "其他细节" : "Other Details"}</a>
+          <ul class="dropdown-menu">
+            <li><a href="/Farmer.html">${lang==="zh" ? "农民信息" : "Farmer Info"}</a></li>
+            <li><a href="/QaA.html">${lang==="zh" ? "常见问题" : "Common Problems"}</a></li>
+            <li><a href="/Dongyi.html">${lang==="zh" ? "侗医项目简介" : "Dongyi Program Info"}</a></li>
+          </ul>
+        </li>
+        <li>
+          <select id="languageSelect">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+          </select>
+        </li>
+      `;
+      document.getElementById("navigation").innerHTML+=html;
+    }
+
+    function navDisplay(){
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("navigation");
+      hamburger.addEventListener("click", function () {
+        nav.classList.toggle("active")
+      });
+    }
+
+    // —— 页面文字的双语字典（不影响原版导航）——
+    const LanguageDatabase = {
+      page_title:{ zh:"支持我们", en:"Support Us" },
+      page_sub:{ zh:"选择支付宝或微信进行赞助。点击二维码可放大，或保存到相册后在 App 内识别。", en:"Choose Alipay or WeChat to sponsor. Tap to zoom or save the QR and scan in the app." },
+      alipay_title:{ zh:"支付宝 Alipay", en:"Alipay" },
+      wechat_title:{ zh:"微信 WeChat", en:"WeChat" },
+      badge_direct:{ zh:"直达收款", en:"Direct" },
+      btn_zoom:{ zh:"点击放大", en:"Zoom" },
+      btn_save:{ zh:"保存二维码", en:"Save QR" },
+      tip_text:{ zh:"提示：若在微信或支付宝内打开本页，长按二维码可直接识别。若无法识别，请保存图片后在 App 内扫码。", en:"Tip: In WeChat/Alipay, long-press the QR to recognize. If it fails, save the image and scan within the app." },
+      assist_text:{ zh:'需要开具凭证或遇到问题？请前往 <a href="/form.html">form.html</a> 留下信息，我们将人工协助。', en:'Need a receipt or help? Leave your info at <a href="/form.html">form.html</a> and we will assist.' }
+    };
+
+    function refreshLanguage(lang){
+      document.querySelectorAll("[data-text-id]").forEach(el=>{
+        const key=el.getAttribute("data-text-id");
+        el.innerHTML = LanguageDatabase[key]?.[lang] || "";
+      });
+    }
+
+    function bindLanguageSelector(){
+      const oldSelect=document.getElementById("languageSelect");
+      if(!oldSelect) return;
+      const select=oldSelect.cloneNode(true);
+      oldSelect.parentNode.replaceChild(select,oldSelect);
+      select.value=Language;
+      select.addEventListener("change", function () {
+        Language=this.value;
+        localStorage.setItem("language", Language);
+        navigationLang(Language);
+        bindLanguageSelector();
+        refreshLanguage(Language);
+      });
+    }
+
+    /* ========= QR 放大与保存 ========= */
+    const QR_SOURCES = {
+      alipay: "/Image_about/pay_alipay.webp",
+      wechat: "/Image_about/pay_wechat.webp"
+    };
+
+    const modal = document.getElementById("qr-modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalClose = document.getElementById("modal-close");
+
+    function openModal(src){ modalImg.src = src; modal.classList.add("open"); modal.setAttribute("aria-hidden","false"); }
+    function closeModal(){ modal.classList.remove("open"); modal.setAttribute("aria-hidden","true"); modalImg.src=""; }
+
+    function saveImage(src, filename="qr.png"){
+      const a=document.createElement("a");
+      a.href=src; a.download=filename; document.body.appendChild(a); a.click(); a.remove();
+    }
+
+    function bindQR(){
+      // 同步图片源（若改了 QR_SOURCES）
+      const alipay = document.getElementById("qr-alipay");
+      const wechat = document.getElementById("qr-wechat");
+      if(alipay) alipay.src = QR_SOURCES.alipay;
+      if(wechat) wechat.src = QR_SOURCES.wechat;
+
+      // 放大
+      document.querySelectorAll("[data-zoom]").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const key = btn.getAttribute("data-zoom");
+          openModal(QR_SOURCES[key]);
+        });
+      });
+      // 保存
+      document.querySelectorAll("[data-save]").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const key = btn.getAttribute("data-save");
+          const file = key==="alipay" ? "alipay_qr.webp" : "wechat_qr.webp";
+          saveImage(QR_SOURCES[key], file);
+        });
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", e=>{ if(e.target===modal) closeModal(); });
+      document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
+    }
+
+    /* ========= 初始化 ========= */
+    window.onload=function(){
+      navigationLang(Language);   // 原版导航
+      navDisplay();               // 原版汉堡交互
+      bindLanguageSelector();     // 语言切换
+      refreshLanguage(Language);  // 页面文案
+      bindQR();                   // 二维码交互
+    };
+  </script>
+</body>
+</html>
