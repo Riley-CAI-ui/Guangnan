@@ -28,7 +28,7 @@ let Language=localStorage.getItem("language") || "zh"
                 en:"I’m Jacob, originally from Hong Kong, and I’ve been studying at Charterhouse School in the UK since the age of 13. My fascination with Guangnan stems from a personal place. With both of my parents from China, I’ve always felt deeply connected to my cultural heritage. Yet, what’s often overlooked are the communities in China’s rural heartlands - ethnic minorities, mountain villages, and centuries-old crafts and languages that quietly, yet strugglingly persist. To me, Guangnan represents exactly that: a living, breathing archive of culture, identity, and resilience. My goal is to support Guangnan’s growth - not only by preserving its traditions, but also by sharing them with the rest of China and the world. Having organised an exhibition to showcase Guangnan’s culture at my school in the UK, I’m now helping to promote Guangnan’s top-quality glutinous rice adaptation project in China.",
                 zh:"我是梓晟，在香港出生，13岁来到英国Charterhouse School 读书。我对广南的迷恋源于个人经历。我一直对中国传统有着深厚的情感 – 我的父母都在国内出生和长大。中国乡村腹地的社群常常被忽略：少数民族、山村、传承数百年的技艺和语言，它们默默地、却又艰难地延续着。对我来说，广南正是这样的：一个鲜活的、充满文化、身份认同和韧性的档案库。因此，我想帮助广南改变，不仅维持传统，而且带领他走向全中国和世界。我在英国学校展出了广南的文化，在中国我们要把广南顶级的糯米推向全国。",
             },
-            image:"Jacob_image.jpg"
+            image:"/member_images/Jacob_image.jpg"
         },
 
         Alex:{
@@ -36,7 +36,7 @@ let Language=localStorage.getItem("language") || "zh"
                 en:"I’m Alex, from the UK, though I’ve also lived in Japan and Singapore for several years. I have been studying at Charterhouse School since Year 9. I was eager to join Jacob on this project, inspired by my long-standing interest in Eastern philosophy and culture. Visiting Guangnan with Jacob was eye-opening. I was deeply moved by the richness of its traditions, rituals, and spiritual life - experiences unlike anything I had encountered before. I documented many of these moments, hoping to share Guangnan’s unique heritage with a wider audience and highlight the importance of preserving such cultural treasures, and did this in ‘The Story of Guangnan: Exhibition’.",
                 zh:"我叫Alex，来自英国，也曾在日本和新加坡生活过几年。我从九年级起就在查特豪斯公学就读。我渴望加入Jacob的这个项目，因为我一直以来对东方哲学和文化由浓厚的兴趣。第一次来到中国，和Jacob一起参观广南让我大开眼界。我被这里丰富的传统、仪式和精神生活深深打动——这是我从未体验过的体验。我记录下了许多这样的瞬间，希望与更广泛的受众分享广南独特的文化遗产，并强调保护这些文化瑰宝的重要性，于是，我创作了“广南故事：展览”。",
             },
-            image:"Alex_image.jpg"
+            image:"/member_images/Alex_image.jpg"
         },
 
         Riley:{
