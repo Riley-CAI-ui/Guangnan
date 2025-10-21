@@ -85,8 +85,8 @@ formData={
     },
 
     user_area:{
-        en:"Area want to adopt(20 ㎡=annual yield: 50kg, price: 2000 RMB):",
-        zh:"认养糯米地面积（20平方米年产量为50公斤，售价2000 RMB）："
+        en:"Adoption Amounts (RMB 500, 1,000, 1,500, 2,000):",
+        zh:"认养金额（500，1000，1500，2000RMB):"
     },
 
     user_note:{
@@ -97,6 +97,23 @@ formData={
     button:{
         en:"Submit Adoption form",
         zh:"提交表单"
+    },
+
+    donate_title:{
+        zh:"不方便认养？你也可以直接捐款支持",
+        en:"Prefer not to adopt? You can donate instead"
+    },
+    donate_desc:{
+        zh:"捐款将用于支持侗医义诊点设计与启动、农户培训与种质保护、以及项目网站与物流等必要支出。你可以在下一页选择单次或按你意愿的任意金额捐助。",
+        en:"Your donation helps fund the Dong medicine clinic design & kickoff, farmer training & landrace preservation, and essential ops like website and logistics. On the next page you can choose a one-time or any custom amount."
+    },
+    donate_button:{
+        zh:"前往捐款页面",
+        en:"Go to Donation Page"
+    },
+    adopt_cta:{
+        zh:"我想继续认养",
+        en:"I want to adopt instead"
     }
 
 

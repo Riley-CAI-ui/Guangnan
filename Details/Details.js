@@ -1,6 +1,40 @@
         let Language=localStorage.getItem("language") || "zh"
 
         LanguageDatabase={
+            plans_title: {
+                zh: "选择你的认养方案",
+                en: "Choose Your Adoption Plan"
+            },
+            plans_sub: {
+                zh: "四个档位，权益清晰；所有方案均支持诊所建设并直连农户。",
+                en: "Four tiers with clear benefits. All plans support the clinic and directly link you to a farmer."
+            },
+            plans_badge_entry: { zh:"入门支持", en:"Entry" },
+            plans_badge_popular: { zh:"推荐", en:"Popular" },
+            plans_badge_deep: { zh:"深度参与", en:"In-depth" },
+            plans_badge_full: { zh:"完整认养", en:"Full Adoption" },
+
+            plans_p500: {
+                zh: "大约收获6公斤糯米",
+                en: "Roughly 6 kilograms of sticky rice"
+            },
+            plans_p1000: {
+                zh: "大约收获12公斤糯米",
+                en: "Roughly 12 kilograms of sticky rice harvested."
+            },
+            plans_p1500: {
+                zh: "大约收获25公斤糯米",
+                en: "Roughly 25 kilograms of sticky rice harvested."
+            },
+            plans_p2000: {
+                zh: "大约收获50公斤糯米",
+                en: "Roughly 50 kilograms of sticky rice harvested."
+            },
+
+            plans_cta: { zh:"立即认养", en:"Adopt Now" },
+            plans_process: { zh:"认养流程", en:"Process" },
+            
+            
             why_adopt_title:{
                 zh:"认养的意义",
                 en:"The meaning of adoption"

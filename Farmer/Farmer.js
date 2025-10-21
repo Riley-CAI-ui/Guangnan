@@ -157,15 +157,7 @@ let Language=localStorage.getItem("language") || "zh"
         });
     }
         
-        function heroLang(lang){
-            const title=document.getElementById("hero-title")
-            const subTitle=document.getElementById("hero-subTitle")
-
-            if (title&&subTitle) {
-                title.textContent=lang==="zh" ? "认识广南的种田人" : "Farmer Information"
-                subTitle.textContent=lang==="zh" ? "他们的手掌里，不只有泥土，还有几十年的技艺与记忆。" : "In their hands lies not only soil, but decades of skill and memory."
-            }
-        }
+       
 
         
 
@@ -236,7 +228,7 @@ let Language=localStorage.getItem("language") || "zh"
                 Language = this.value;
                 localStorage.setItem("language", Language)
                 renderFarmers(Language)
-                heroLang(Language)
+                
                 navigationLang(Language)
                 slogan(Language)
 
@@ -247,7 +239,7 @@ let Language=localStorage.getItem("language") || "zh"
 
         window.onload=function(){
             renderFarmers(Language)
-            heroLang(Language)
+            
             navigationLang(Language)
             slogan(Language)
 
@@ -258,14 +250,4 @@ let Language=localStorage.getItem("language") || "zh"
 
         
         
-        const button=document.getElementById("floating_arrow")  //animation for clicking then scroll down automaticlly
-            const target=document.getElementById("farmer_list")
-
-            button.onclick=function(){
-                const y=target.getBoundingClientRect().top+window.pageYOffset-100
-
-                window.scrollTo({
-                    top:y,
-                    behavior:"smooth"
-                })
-            }
+      

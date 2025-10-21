@@ -176,5 +176,86 @@
 
     <script src="/Index.js"></script>
 
+    <!-- ===== Guangnan Sticky CTA (adopt + donate) ===== -->
+<div id="gnv-sticky-cta" class="gnv-cta" role="region" aria-label="Call to action">
+  <a class="gnv-btn gnv-primary" href="/Adoption.html" id="gnv-cta-adopt">立即认养</a>
+  <a class="gnv-btn gnv-ghost"   href="/sponsor.html"  id="gnv-cta-donate">捐赠</a>
+</div>
+
+<style>
+  :root{
+    /* 你可按需覆盖这些变量以适配配色 */
+    --gnv-bg:#ffffff;
+    --gnv-text:#0f172a;
+    --gnv-border:#e2e8f0;
+    --gnv-primary:#2e7d32;     /* 主按钮背景色 */
+    --gnv-shadow:0 8px 24px rgba(2,8,23,.18);
+  }
+  .gnv-cta{
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:calc(env(safe-area-inset-bottom, 0px) + 12px);
+    z-index:9999;
+    background:var(--gnv-bg);
+    color:var(--gnv-text);
+    border:1px solid var(--gnv-border);
+    box-shadow:var(--gnv-shadow);
+    border-radius:20px;
+    padding:8px;
+    width:min(560px, 94vw);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    -webkit-backdrop-filter:saturate(1.1);
+    backdrop-filter:saturate(1.1);
+  }
+  .gnv-btn{
+    display:inline-block;
+    padding:12px 16px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:12px;
+    border:1px solid var(--gnv-border);
+    color:var(--gnv-text);
+    background:#fff;
+    font-weight:700;
+    line-height:1.1;
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .06s ease;
+  }
+  .gnv-btn:active{ transform:translateY(1px); }
+  .gnv-primary{ background:var(--gnv-primary); color:#fff; border-color:transparent; }
+  .gnv-ghost{ background:#fff; }
+  @media (max-width:420px){
+    .gnv-cta{ padding:6px; gap:6px; border-radius:16px; }
+    .gnv-btn{ padding:11px 12px; font-weight:600; }
+  }
+</style>
+
+<script>
+  (function(){
+    // 防重复挂载（如果多次粘贴同组件，也只保留一个）
+    if(document.querySelectorAll('#gnv-sticky-cta').length > 1){
+      document.querySelectorAll('#gnv-sticky-cta').forEach((el,i)=>{ if(i>0) el.remove(); });
+    }
+    // 文案：根据 localStorage.language 自动中英切换
+    var lang = (localStorage.getItem('language') || 'zh').toLowerCase();
+    var txt = {
+      adopt: lang === 'en' ? 'Adopt Now' : '立即认养',
+      donate: lang === 'en' ? 'Donate'    : '捐赠'
+    };
+    var a = document.getElementById('gnv-cta-adopt');
+    var d = document.getElementById('gnv-cta-donate');
+    if(a) a.textContent = txt.adopt;
+    if(d) d.textContent = txt.donate;
+
+    // 防止被页面其他 fixed 元素/cookie bar 挡住：可按需微调 bottom
+    // 例如：document.getElementById('gnv-sticky-cta').style.bottom = '20px';
+  })();
+</script>
+<!-- ===== /Guangnan Sticky CTA ===== -->
+
 </body>
 </html>
